@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Add favicon (Insert image side of title) -->
+    <link rel="icon" type="image/x-icon" href="/Source/favicon.ico">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="beginnerCSS.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        html {
+            /* when href click the id go through smoothly othervise follows auto behaviour. */
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<script>
+    document.getElementById("demo").innerHTML = "Hello JavaScript!";
+</script>
+<!-- Block elements : A block-level element in HTML is an element that takes up as much space as possible, both horizontally and vertically, and starts on a new line. -->
+<!-- Inline elements : An inline element is a piece of content that appears in a line with the main text, rather than starting on a new line as a separate section. -->
+
+<body>
+    <!-- Directly go to the name of google used as a id. -->
+    <a href="#google">Go to google URL.</a>
+    <!-- heading : it is a arrengment of text or paragraph. 
+     This all headings are block tag-->
+    <h1>This is h1 heading.</h1>
+    <h2>This is h2 heading.</h2>
+    <h3>This is h3 heading.</h3>
+    <h4>This is h4 heading.</h4>
+    <h5>This is h5 heading.</h5>
+    <h6>This is h6 heading.</h6>
+
+    <hr /> <!--Horizontal line created.-->
+
+    <!-- paragraph elements also a block element. -->
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis aut ab ipsum, id nobis eveniet<br />New line by
+        br tag.
+        <br /><em>This is em tag used for italic text and <strong>strong tag is used for bold the text.</strong></em>
+        <br /> laudantium magni, eos vitae, est odio molestias. Voluptate commodi tempore enim suscipit, cumque est
+        optio.
+    </p>
+
+    <!-- Comment here -->
+    <p><strong>Comment : </strong>Insert information between <!-- text --> tag. (browser does not recognise). <br />
+        Comment allows to developers leave there notes for their code and it's functionality. </p>
+
+    <!-- Underline, strikethrough, superscript and subscript tags -->
+    <u>Underline tag, </u><s>strikethrough tag, </s><sub>Subscript tag, </sub><sup>Superscript tag.</sup>
+
+    <!-- Preformatted text : pre, kbd, abbr -->
+    <pre>Pre tag: Preserving spaces and line breaks (Write text same as you write).</pre>
+    <p>To save file, press <kbd>Ctrl</kbd> + <kbd>S</kbd>. Kbd tag is used to highlight the keyboard keys or sortcuts.
+    </p>
+    <!-- abbr : used for abbreviation a word -->
+    <p><abbr title="World Health Organization">WHO</abbr> is a international Organization.</p>
+
+    <!-- Text Highlight : <mark>, <small>, <del> -->
+    <p>Hightight <mark>this tag </mark>to emphasize it.</p>
+    <p>This is <small>Smaller font size </small> text.</p>
+    <p>My favorite color is <del>green</del> red.</p>
+    <!-- del vs s : the <S> tag specifies text that is no longer correct, accurate or relevant.
+        The del tag is used to identify text that has been deleted from document but retained to show the history of modifications. -->
+
+    <!-- inline style -->
+    <p style="color: red;">
+        Inline style is a way to style the html content.
+    </p>
+
+    <!-- Anchor tag : <a> tag defines a hyperlink, which is used to go via link from one page to another -->
+    <a href="http://www.google.com" target="_blank" title="Go to Google" id="google">Google</a>
+    <br>
+    <!-- Download the readme file -->
+    <a href="README.md" download>Download readme file</a>
+    <!-- First href attribute showes Absolute path and second one is acces by directly by current folder is called realative path -->
+    <br />
+    <a href="mailto:infinitygoal3503@gmail.com">Send mail by click me.</a>
+    <br />
+    <a href="tel: +919044171132">Call &amp; Us</a>
+    <br />
+    <!-- Image tag : <img> tag is used to add an image in an HTML page. -->
+    <img src="Source/IMG_20230508_091245_180.jpg" alt="My photo" title="Local Image" loading="eager" width="250"
+        height="auto" usemap="#map">
+    <!-- Deprecated attributes of html images : align, border, hspace, vspace -->
+    <!-- Notes: map make a area based clickable image by using usemap to link image with map-->
+    <map name="map">
+        <area shape="rect" ; coords="0,0,125,150" ; href="http:\\www.bing.com" alt="Bing search" />
+    </map>
+    <!-- Notes:  -->
+    <!-- Void element / Empty element -->
+    <!-- Some of the tags or elements don't need to closing tag that type of element or tag is known as void/empty element -->
+
+    <!-- Picture element : <picture> element contain zero to more <source> elements and one <img> element to offer alternative version of an image for different display/devices scenarios-->
+    <picture>
+        <source scrset="Source\IMG_20230508_091245_180.webp" type="image/webp">
+        <source scrset="Source\IMG_20230508_091245_180.jpeg" type="image/jpeg">
+        <img src="Source/IMG_20230508_091245_180.jpg" alt="Image" width="250px" />
+    </picture>
+
+    <!-- figure tag : it represent self-container content, potentially with optional option, which specifies using <figcaption> element -->
+    <figure>
+        <img src="Source/IMG_20230508_091245_180.jpg" alt="Image" width="300px" />
+        <figcaption>My zoo photo | Do you watch it.</figcaption>
+    </figure>
+
+    <!-- HTML List : there is two type of list :  -->
+    <!-- 1. Unordered List (ul) -->
+    <ul style="list-style-type: circle;">
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Banana</li>
+    </ul>
+    <ol type="a" start="10" reversed>
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Banana</li>
+    </ol>
+
+    <!-- Menu Bar -->
+    <ul style="list-style-type: none; display: flex; gap: 50px;">
+        <li>Home</li>
+        <li>About</li>
+        <li>Service</li>
+        <li>Contact</li>
+    </ul>
+
+    <!-- Table Tag: It allow developers to arrange data into row and columns.-->
+    <!-- <thead> : Block of rows that consist of column label(header) for the parent table.
+         <tbody> : Block of row that consist of a body of data for the parent table element.
+         <tfoot> : Block of rows that consist of the column Summaries(footer) for parent table.
+         <th> : Represent a header cell in table.
+         <td> : Represent a data cell in table.
+         <tr> : Represent a row of cell in table.   -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Kunal</td>
+                <td rowspan="2">20</td>
+            </tr>
+            <tr>
+                <td>Mahesh</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Count : 2</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- iframe tag:  Represent a nested browsing context. -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/5ccq_nLHneE?si=HMEpcFZY4SwQxxdz"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d56895.53911671434!2d80.99815679999999!3d26.9678115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1727287743533!5m2!1sen!2sin"
+        width="600" height="315" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <br />
+    <!-- Audio Tag : Used to embed audio content in webpage. It support various audio  -->
+    <!-- Attributes : Controls, autoplay, loop, preload, poster -->
+    <audio controls>
+        <source src="Source/original-song-239607.mp3" type="audio/mpeg" />
+        <source src="Source/original-song-239607.wav" type="audio/wav" />
+    </audio>
+    <!-- Video Tag : Used to embed video content in webpage. It support various video  -->
+    <!-- Attributes : Controls, autoplay, loop, poster -->
+    <!-- <video controls muted loop autoplay width="400px" height="auto" poster="Source/IMG_20230508_091245_180.webp"> -->
+    <video controls width="400px" height="auto">
+        <source src="Source/Screen.mp4" type="video/mp4" />
+        <source src="Source/Screen.webm" type="video/webm" />
+    </video>
+    <hr />
+
+    <!-- Form tag: It is used to create HTML form for user input. -->
+    <!-- Form attribute: action="path", target="_blank/_self/_parent/_top/framename(iframe)", autocomplete="on/off", novalidate, mathod="get/post" accept-charset="utf-8",  -->
+    <form action="action_page.php" target="_blank" autocomplete="off" novalidate>
+        <!-- Note: Always use POST if the form data contains sensitive or personal information! -->
+        <!-- Form Elment : <input>, <label>, <textarea>, <select>, <button>, <fieldset>, <legend>, <datalist>, <output>, <option>, <optgroup> -->
+        <div>
+            <!-- <label for="idNameOfInput"> Text : </label> -->
+            <label for="username">Username : </label>
+            <!-- <input type="value" id="textRelatedToWork" placeholder="show text in input area as a hint." -->
+            <input type="text" id="username" placeholder="Enter your name" required /><br><br>
+        </div>
+        <div>
+            <!-- type: email -->
+            <label for="email">Email : </label>
+            <input type="email" id="email" disabled /><br><br>
+
+            <!-- type: number -->
+            <label for="num">Number: </label>
+            <input type="number" id="num" name="num" min="1" step="10" value="30"><br><br>
+
+            <!-- type: range -->
+            <label for="vol">Volume (Between 0 to 50): </label>
+            <input type="range" id="vol" name="vol" min="0" max="50"><br><br>
+        </div>
+        <!-- HTML Input attributes: checked(checkbox/radio), multiple, pattern="Sampal" selected, readonly, required, disabled, size="value", maxlength="Value", min="value", max="value", step, title="sometext", autofocus, list="textTolinkWithDatalist", autofocus -->
+        <div>
+            <!-- type: radio;  -->
+            <span>Choose your favorite Web Language: </span><br>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">HTML</label>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">CSS</label>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">JavaScript</label>
+            <input type="radio" id="react" name="fav_language" value="react" checked>
+            <label for="react">React</label><br><br>
+        </div>
+        <div>
+            <!-- type: checkbox; -->
+            <span>Check the three best programming language: </span><br>
+            <input type="checkbox" name="language" id="C">
+            <label for="C">C</label>
+            <input type="checkbox" name="language" id="C++" checked>
+            <label for="C++">C++</label>
+            <input type="checkbox" name="language" id="Java">
+            <label for="Java">Java</label>
+            <input type="checkbox" name="language" id="phython">
+            <label for="python">Python</label><br><br>
+        </div>
+        <div>
+            <!-- Color element -->
+            <label for="favcolor">Select your favorite color: &nbsp; </label>
+            <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+        </div>
+        <div>
+            <!-- type: date -->
+            <label for="birthday">Birthday: </label>
+            <input type="date" id="birthday" name="birthday" max="2024-10-04" min="1995-01-01">
+            <br><br>
+
+            <!-- type: datetime-local -->
+            <label for="BirthdayTime">Birthday Time</label>
+            <input type="datetime-local" id="BirthdayTime" name="birthdaytime">
+            <br><br>
+
+            <!-- type: month -->
+            <label for="bdaymonth">Birthday (Month and year): </label>
+            <input type="month" name="bdaymonth" id="bdaymonth"><br><br>
+
+            <!-- type: time -->
+            <label for="appt">Select a time: </label>
+            <input type="time" id="appt" name="appt"><br><br>
+
+            <!-- type: week -->
+            <label for="week">Select a week (week and year): </label>
+            <input type="week" id="week" name="week"><br><br>
+        </div>
+        <div>
+            <!-- type: file -->
+            <label for="myfile">Select a file : </label>
+            <input type="file" name="myfile" id="myfile"><br><br>
+
+            <!-- type: hidden => The hidden field is not shown to the user, but the data is sent when the form is submitted. -->
+            <label for="custID">Type: Hidden</label>
+            <input type="hidden" id="custID" name="custID" value="3248"><br><br>
+
+            <!-- type: url -->
+            <label for="homepage">Add your homepage: </label>
+            <input type="url" id="homepage" name="homepage"><br><br>
+        </div>
+        <div>
+            <!-- type: search -->
+            <label for="gsearch">Google Search</label>
+            <input type="search" id="gsearch" name="gsearch"><br><br>
+
+            <!-- type: tel => maxlength and pattern -->
+            <label for="phone">Enter your phone number: </label>
+            <input type="tel" name="phone" id="phone" maxlength="10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br><br>
+
+            <label for="country_code">Country code:</label>
+            <input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{3}"
+                title="Three letter country code" placeholder="USA"><br><br>
+        </div>
+        <div>
+            <!-- button element -->
+            <button type="button" onclick="alert('Erro Found!')">Click Me!</button><br><br>
+            <input type="button" value="Click Me"><br><br>
+        </div>
+        <div>
+            <!-- Submit button -->
+            <input type="submit" value="submit"><br><br>
+
+            <!-- Reset button -->
+            <input type="reset" value="Reset"><br><br>
+        </div>
+        <div>
+            <label for="textarea">Message: </label>
+            <!-- <textarea id="textRelatedToWork" cols="value" rows="value"></textarea> -->
+            <textarea name="message" id="textarea" cols="30" rows="10">The cat was playing in the garden.</textarea>
+        </div>
+        <div>
+            <!-- Select Element define drop-down list. -->
+            <label for="cars">Choose a car: </label>
+            <select id="cars" name="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="Fiat" selected>Fiat</option>
+                <option value="Audi">Audi</option>
+            </select>
+
+            <!-- <select id="forName" name="Text" size="value" multiple></select> -->
+            <select id="cars" name="cars" size="3" multiple>
+                <!-- <option value="Text" selected> Text </option> -->
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="Fiat" selected>Fiat</option>
+                <option value="Audi">Audi</option>
+            </select>
+        </div>
+        <div>
+            <!-- <fieldset> : making boundries for your work-->
+            <fieldset>
+                <!-- <legend>: Emerge with border and give main title of fieldset or form -->
+                <legend>Personalia: </legend>
+                <label for="name">Username: </label>
+                <!-- values are a text that shows directly to output/Input area -->
+                <input type="text" id="name" name="name" value="John Sharma" readonly><br><br>
+                <label for="password">Password: </label>
+                <input type="password" id="password" name="password" placeholder="Enter password">
+                <br><br>
+                <input type="submit" value="SUBMIT">
+
+            </fieldset>
+        </div>
+        <div>
+            <!-- The <datalist> element specifies a list of pre-defined options for an <input> element, list value and id value must be same. -->
+            <label for="browser">Datalist : </label>
+            <input list="browser">
+            <datalist id="browser">
+                <option value="Edge"></option>
+                <option value="Chrome"></option>
+                <option value="Opera"></option>
+                <option value="Safari"></option>
+            </datalist>
+        </div>
+    </form>
+
+    <!-- <output> : Defines the result of a calculation -->
+    <form action="action_page.php" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+
+        0<input type="range" id="a" name="a" value="50">
+        100 +<input type="number" id="b" name="b" value="50">
+        =
+        <output name="x" for="a b"></output>
+        <br><br>
+
+        <!-- type: image -->
+        <label for="image">Type: Image</label>
+        <input type="image" src="/Source/IMG_20230508_091245_180.jpg" alt="submit" width="100px"><br><br>
+    </form>
+
+    <!-- An input field located outside of the HTML form (but still a part of the form): By form using id="text" and outside input add form="text" to consider as a part of form -->
+    <form action="action_page.php" id="form1">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname" form="form1">
+
+    <!-- progress level -->
+    <label for="html">HTML : </label>
+    <progress id="html" max="100" value="80"></progress>
+
+    <!-- Learn, when work with backend: formaction, formsnctype, formmethod, formtarget, formnovalidate, novalidate -->
+
+
+
+</body>
+
+</html>
