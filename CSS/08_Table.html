@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Table Css</title>
+        <style>
+            @import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0.5rem;
+                font-family: "Roboto", sans-serif;
+                font-size: 1rem;
+            }
+            table, th, td{
+                border: 2px solid black;
+            }
+            table {
+                text-align: left;
+                border-collapse: collapse;
+                width: 100%;
+                table-layout: fixed;
+            }
+            th {
+                background-color: #04aa6d;
+                color: white;
+            }
+            thead {
+                font-size: 1.2em;
+            }
+            tbody {
+                font-size: 1.1em;
+            }
+            tfoot {
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+            th {
+                height: 4em;
+                vertical-align: bottom;
+            }
+            td {
+                height: 3em;
+                /* text-align: center; */
+            }
+            th, td {
+                padding: 1rem;
+                border-bottom: 1px solid #aaa;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            tr:hover {
+                cursor: pointer;
+                background-color: coral;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Roll No.</th>
+                    <th>Degree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Kunal Sharma</td>
+                    <td>21</td>
+                    <td>22001018146</td>
+                    <td>B.C.A</td>
+                </tr>
+                <tr>
+                    <td>Mahesh Rawat</td>
+                    <td>20</td>
+                    <td>22001018145</td>
+                    <td>B.tech</td>
+                </tr>
+                <tr>
+                    <td>Ashish Sharma</td>
+                    <td>19</td>
+                    <td>22001018111</td>
+                    <td>Diploma</td>
+                </tr>
+                <tr>
+                    <td>Abhishek Yadav</td>
+                    <td>19</td>
+                    <td>22001018112</td>
+                    <td>B.C.A</td>
+                </tr>
+                <tr>
+                    <td>Kshitij Kant Singh</td>
+                    <td>20</td>
+                    <td>22001018140</td>
+                    <td>B.C.A</td>
+                </tr>
+                <tr>
+                    <td>Ashish Sharma</td>
+                    <td>19</td>
+                    <td>22001018111</td>
+                    <td>Diploma</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Total Student : </td>
+                    <td colspan="2">5</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

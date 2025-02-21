@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Typography</title>
+        <!-- font-input -->
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet"> -->
+        <style>
+            /* replace above font link by below link */
+            @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            .typography {
+                padding: 10%;
+                font-size: 2rem;
+            }
+            input {
+                font: inherit;
+            }
+            .p1{
+                /* text-decoration */
+                text-decoration-line: overline;
+                text-decoration-color: aqua;
+                text-decoration-style: dotted;
+                text-decoration-thickness: 5px;
+                /* text-decoration: underline red double 4px; */
+                text-transform: capitalize;
+                /* text-align */
+                text-align: justify;
+                text-align-last: right;
+            }
+            .ex1 {
+                direction: rtl;
+                unicode-bidi: bidi-override;
+            }
+            img {
+                vertical-align: text-top;
+                width: 10px;
+            }
+            /* Text spacing */
+            .p2 {
+                text-indent: 10rem;
+                letter-spacing: 5px;
+                line-height: 5rem;
+                word-spacing: 1rem;
+            }
+            .text-shadow {
+                color: white;
+                /* text-shadow : indent top-space spread-color color_value */
+                text-shadow: 0px 0px 5px red, 0px 0px 10px green;
+            }
+            .font {
+                white-space: nowrap;
+                /* font-size: 20px; */
+                /* resposive font size */
+                font-size: 2vw;
+            }
+            .font-p1 {
+                /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+                font-family: Copperplate, Papyrus, fantasy;
+                font-style: italic;
+                font-weight: bolder;
+                font-variant: small-caps;
+                /* font: italic small-caps bolder 12px Copperplate, Papyrus, fantasy; */
+            }
+            .font-p2 {
+                font-family: "Afacad Flux", sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="typography">
+            <h1>CSS Typography</h1>
+            <p class="p1">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad reprehenderit quisquam soluta nihil nisi, corrupti laboriosam excepturi explicabo? Obcaecati sint sed accusantium necessitatibus blanditiis veritatis repellat est a non facere?
+            </p>
+            <form action="#">
+                <label for="email">Email : </label>
+                <input type="email" name="email" id="email" placeholder="Your Email">
+                <input type="button" value="Submit">
+            </form>
+            <p class="p2">This is the default text direction.</p>
+            <p class="ex1">This <img src="../Source/gost.png" alt="gost_img"> is right-to-left text direction.</p>
+
+            <h1 class="text-shadow">Text shadow effect</h1>
+            <section class="font">
+                <p class="font-p1">
+                    White-space : nowrap; Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate amet error perspiciatis omnis expedita harum eveniet soluta.
+                </p>
+                <p class="font-p2">
+                    Whereas : Vel ut cum quod dolorum incidunt ab, molestiae quisquam voluptas maiores numquam doloremque!
+                </p>
+            </section>
+        </section>
+    </body>
+</html>

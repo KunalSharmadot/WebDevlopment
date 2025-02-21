@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Units & Sizes</title>
+        <link rel="stylesheet" href="path.css">
+        <style>
+            body {
+                /* Default font-size: 16px */
+                /* margin: 0px; */
+                /* padding: 0px; */
+                /* box-sizing: border-box; */
+                border: 3px solid blue;
+                /* Instance of using vw use % for overflow */
+                /* vh expand to html body */
+                height: 100vh;
+            }
+            /* percentage */
+            .size-relative {
+                   width: 50%;
+            }
+            .size-relative > h1 {
+                border: 5px dotted red;
+                /* width of h1 is relative to section body */
+                width: 50%;
+            }
+            /* Relative Units */
+            .size-relative {
+                /* font-size: 16px = 1rem */
+               font-size: 1rem;
+            }
+            .size-relative > p {
+                font-size: 1.5em;
+                /*show width => 100 character per line */
+                width: 100ch;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="size-relative">
+            <h1>Units and Sizes</h1>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas dolor quae, ipsam eveniet unde error.
+                Asperiores laboriosam alias vitae quam accusamus, esse nobis assumenda eum voluptates, corporis illo minima
+                quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ipsa cum ipsam, at corrupti porro sed
+                sapiente officiis, odit repellendus nemo. In vitae quasi rerum pariatur doloremque id perspiciatis accusamus.
+            </p>
+        </section>
+    </body>
+</html>

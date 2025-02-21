@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Link</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+        body {
+            padding: 4%;
+            font-size: 1rem;
+            font-family: "Ubuntu", sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: black;
+        }
+
+        /* unvisited link */
+        a:link {
+            color: red;
+        }
+
+        /* visited link */
+        a:visited {
+            color: inherit;
+        }
+
+        /* mouse overlink, click tab on page */
+        a:hover,
+        a:focus {
+            color: dodgerblue;
+        }
+
+        /* selected link */
+        a:active {
+            color: red;
+        }
+
+        .link-style>div>p {
+            display: none;
+            background-color: yellow;
+            padding: 20px;
+        }
+
+        div:hover p {
+            display: block;
+        }
+
+        p:first-child {
+            border: 10px solid blue;
+        }
+
+        p:last-child {
+            border: 5px solid green;
+        }
+
+        q:lang(no) {
+            quotes: "~" "~";
+        }
+
+        p:nth-child(3) {
+            border: 2px dashed orange;
+        }
+
+        /* .link-style > h1::after::beforer::first-line::first-letter {  } */
+    </style>
+</head>
+
+<body>
+    <section class="link-style">
+        <h1>CSS Link</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, perspiciatis.</p>
+        <p>
+            This is google search engine link : <a href="http://www.google.com" target="_self">Google</a>
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.<a href="#">Daily Developers</a>
+        </p>
+        <p>
+            Welcome to w3School <a href="http://www.w3schools.com">w3school</a>
+        </p>
+        <p>
+            This is google search engine link : <a href="http://www.google.com" target="_self">Google</a>
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.<a href="#">Daily Developers</a>
+        </p>
+        <p>
+            Welcome to w3School <a href="http://www.w3schools.com">w3school</a>
+        </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, perspiciatis.</p>
+
+        <div> Mouse hover on me
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, perspiciatis.</p>
+        </div>
+    </section>
+    <article>
+        <h1>child pseudo</h1>
+        <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, perspiciatis.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, perspiciatis.</p>
+            <p>Some text <q lang="no">A Quote in a paragraph</q> Some text</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, perspiciatis.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, perspiciatis.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, perspiciatis.</p>
+        </div>
+        <h2>The cursor Property</h2>
+
+        <p>Mouse over the words to change the cursor.</p>
+        <span style="cursor:auto">auto</span><br>
+        <span style="cursor:crosshair">crosshair</span><br>
+        <span style="cursor:default">default</span><br>
+        <span style="cursor:e-resize">e-resize</span><br>
+        <span style="cursor:help">help</span><br>
+        <span style="cursor:move">move</span><br>
+        <span style="cursor:n-resize">n-resize</span><br>
+        <span style="cursor:ne-resize">ne-resize</span><br>
+        <span style="cursor:nw-resize">nw-resize</span><br>
+        <span style="cursor:pointer">pointer</span><br>
+        <span style="cursor:progress">progress</span><br>
+        <span style="cursor:s-resize">s-resize</span><br>
+        <span style="cursor:se-resize">se-resize</span><br>
+        <span style="cursor:sw-resize">sw-resize</span><br>
+        <span style="cursor:text">text</span><br>
+        <span style="cursor:w-resize">w-resize</span><br>
+        <span style="cursor:wait">wait</span><br>
+    </article>
+</body>
+
+</html>

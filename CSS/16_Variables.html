@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta name="viewport" content="width=device-width, intial-scale = 1.0" >
+
+        <title>Media Queries</title>
+        <link rel="stylesheet" href="00_Index.css">
+        <style>
+            /* || Variables */
+            :root {
+                /* COLOR */
+                --BGCOLOR: #475569;
+                --RADIAL-COLOR: whitesmoke;
+                --DARK-COLOR: black;
+
+                /* SQUARE */
+                --SQUARE-BGCOLOR: papayawhip;
+                --SQUARE--SIZE: max(150px, 20vw);
+                --BORDERS: 2px solid var(--DARK-COLOR);
+            }
+            /* DARK and Light Mode Switch */
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --BGCOLOR: #000;
+                    --SQUARE-BGCOLOR: rgb(225, 214, 196);
+                }
+            }
+
+            /* || General Style */
+            body {
+                min-height: 100vh;
+                background-color: var(--BGCOLOR);
+                background-image: radial-gradient(var(--RADIAL-COLOR), var(--BGCOLOR));
+                display: flex;
+                flex-direction: column;
+            }
+            header, nav, footer {
+                display: grid;
+                place-content: center;
+                grid-template-columns: 100%;
+                text-align: center;
+            }
+            header, footer {
+                position: sticky;
+                background-color: #1E293B;
+                color: var(--RADIAL-COLOR);
+            }
+            header {
+                top: 0;
+            }
+            nav {
+                background-color: white;
+                color: var(--DARK-COLOR);
+                padding: 0.5rem;
+                border-bottom: 2px solid var(--DARK-COLOR);
+            }
+            main{
+                flex-grow: 1;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-flow: row wrap;
+                gap: min(4vw, 15px);
+                padding: 10px 0;
+            }
+            footer {
+                bottom: 0;
+            }
+            .square--highlight {
+                --SQUARE-BGCOLOR: cornflowerblue;
+            }
+            .square {
+                background-color: var(--SQUARE-BGCOLOR);
+                width: var(--SQUARE--SIZE);
+                height: var(--SQUARE--SIZE);
+                border: var(--BORDERS);
+                border-radius: 15px;
+                display: grid;
+                place-content: center;
+                font-size: 3rem;
+                box-shadow: 2px 2px 5px var(--DARK-COLOR);
+            }
+        </style>
+    </head>
+    <body>
+        
+        <header>
+            <h1>Header</h1>
+            <nav>
+                <h2>Nav</h2>
+            </nav>
+        </header>
+
+        <main>
+            <div class="square">
+                <p>
+                    Hey
+                </p>
+            </div>
+            <div class="square">🖥️</div>
+            <div class="square">🖥️</div>
+            <div class="square">🖥️</div>
+            <div class="square">🖥️</div>
+            <div class="square square--highlight">🖥️</div>
+            <div class="square">🖥️</div>
+            <div class="square">🖥️</div>
+            <div class="square">🖥️</div>
+            <div class="square">🖥️</div>
+        </main>
+
+        <footer>
+            <h2>Footer</h2>
+        </footer>
+
+    </body>
+
+</html>

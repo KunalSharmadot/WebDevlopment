@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML For CSS</title>
+    <!-- External CSS : You can change the look of an entire website by changing just one on file. -->
+    <link rel="stylesheet" href="Path.css">
+    <style>
+        /* 1. Simple Selector */
+        /* Universal Selector */
+        * {
+            /* padding: 0%; */
+            margin: 10px;
+            /* border: 1px solid black; */
+        }
+
+        /* Element Selector */
+        body {
+            border: 5px solid yellow;
+            color: black;
+        }
+
+        /* Class Selector */
+        .paragraph {
+            color: gray !important;
+        }
+
+        /* Id Selector */
+        #main-heading {
+            font-style: italic;
+        }
+
+        /* 2. Combinator Selector */
+        /* Descendant Selector(space) */
+        article #p1 span {
+            color: red;
+        }
+
+        /* Child Selector */
+        article>#p1 {
+            font-weight: bolder;
+        }
+
+        /* Adjacent Sibling Selector */
+        #Heading2+#p2 {
+            color: blueviolet;
+        }
+
+        /* General Sibling Selector */
+        div~p {
+            background-color: yellow;
+        }
+
+        /* Color-section */
+        #paragraph1 {
+            /* ragba(red, blue, green, alpha) */
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+            border: 5px inset hsla(120, 100%, 50%, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="main-heading">I am learning CSS!</h1>
+    </header>
+    <article>
+        <h2 id="heading1">Article 1</h2>
+        <p id="p1" class="paragraph">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. <span>Hello</span> Doloribus vel et quia animi?
+            Voluptatum a in maxime nisi neque accusantium quisquam, pariatur eaque facere officiis alias, rerum minima
+            cumque autem?
+        </p>
+    </article>
+    <article id="article2" class="article">
+        <h2 id="Heading2">Article 2</h2>
+        <p id="p2" class="paragraph">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. <span>Kunal</span> Vero sit explicabo mollitia
+            tempore aliquam <span>Sharma</span> excepturi minima assumenda necessitatibus ab eos, nisi eligendi
+            dignissimos maxime omnis fugiat labore dolorum. Amet, molestias!
+        </p>
+        <div>
+            <p>Paragraph 2.</p>
+        </div>
+        <p>Paragraph 3.</p>
+        <code>Some code.</code>
+        <p>Paragraph 4.</p>
+    </article>
+
+    <section>
+        <div id="color-section">
+            <p id="paragraph1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis obcaecati ullam doloremque ducimus
+                a iure ipsum repellendus asperiores nesciunt dolore.
+            </p>
+        </div>
+    </section>
+    <section id="css-units">
+        <h1>CSS Units</h1>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto ullam sit explicabo temporibus placeat
+            minus reiciendis obcaecati quibusdam voluptatem, commodi, modi soluta, vitae consectetur quod beatae ab
+            consequatur fugit tempora!
+        </p>
+    </section>
+</body>
+
+</html>
