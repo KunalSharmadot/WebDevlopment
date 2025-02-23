@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="X-UA-Compatible" content="IE-Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic Nav</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            *{
+                padding: 0%;
+                margin: 0%;
+                box-sizing: border-box;
+            }
+            body {
+                height: 100vh;
+            }
+            .main_ul, .subMenu_ul , .child_ul {
+                background-color: rgb(110, 65, 65);
+                list-style-type: none;
+                list-style-position: inside;
+            }
+            .main_li, .subMenu_li, .child{
+                display: inline-block;
+                padding: 1em;
+                cursor: pointer;
+            }
+            .main_li:hover, .subMenu_li:hover, .child:hover {
+                background-color: green;
+            }
+            .subMenu, .child_subMenu {display: none;}
+            .main_course:hover .subMenu {
+                display: block;
+                position: absolute;
+                margin-top: 1em;
+                margin-left: -1em;
+            }
+            .subMenu_li, .child {
+                display: block;
+            }
+            a {
+                text-decoration: none;
+                color: aliceblue;
+                /* padding: 2rem; */
+            }
+            .soft:hover .child_subMenu {
+                display: block;
+                position: absolute;
+                margin-top: -2.2em;
+                margin-left: 9.2em;
+            }
+            .fa-solid {display: none;}
+            .main_course:hover .fa-solid {
+                display: inline;
+                font-size: 0.8em;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="main_menu">
+                <ul class="main_ul">
+                    <li class="main_li"><a href="#">Home</a></li>
+                    <li class="main_li"><a href="#">About Us</a></li>
+                    <li class="main_li main_course"><a href="#">Courses <i class="fa-solid fa-chevron-down"></i></a>
+                        <div class="subMenu">
+                            <ul class="subMenu_ul">
+                                <li class="subMenu_li"><a href="#">Spoken</a></li>
+                                <li class="subMenu_li soft"><a href="#">Computer Software</a>
+                                    <div class="child_subMenu">
+                                        <ul class="child_ul">
+                                            <li class="child"><a href="#">DTP</a></li>
+                                            <li class="child"><a href="#">DCA</a></li>
+                                            <li class="child"><a href="#">ADCA</a></li>
+                                            <li class="child"><a href="#">Programming</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="subMenu_li"><a href="#">Computer Hardware</a></li>
+                                <li class="subMenu_li"><a href="#">Coaching</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="main_li"><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </header>
+    </body>
+</html>
