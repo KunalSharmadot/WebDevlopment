@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="X-UA-Compatible" content="IE-Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsiv Nav</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+            *{
+                margin: 0%;
+                padding: 0%;
+                box-sizing: border-box;
+                font-family: sans-serif;
+            }
+            body {
+                min-height: 100vh;
+                background-image: linear-gradient( skyblue, rgb(73, 171, 210), rgb(0, 98, 255), blue  );
+            }
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 100;
+            }
+            .header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: whitesmoke;
+                z-index: -1;
+            }
+            .bar_ul {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: space-evenly;
+                padding: 0.7rem;
+            }
+            li {
+                list-style: none;
+                list-style-position: inside;
+            }
+            .bar_ul li a {
+                text-decoration: none;
+                color: rgb(67, 66, 66);
+                font-size: 1.15rem;
+                font-weight: 500;
+                padding: 0.8rem;
+            }
+            li a:hover {
+                box-shadow: inset 0 -3px 0 rgba(10, 33, 243, 0.786);
+                color: rgba(10, 33, 243, 0.786);
+            }
+            #check {
+                display: none;
+            }
+            .icons {
+                position: absolute;
+                right: 5%;
+                font-size: 2rem;
+                margin-top: 0.5rem;
+                /* padding-bottom: 0rem; */
+                width: 2.5rem;
+                height: 2rem;
+                text-align: center;
+                cursor: pointer;
+                border-radius: 5px;
+                display: none;
+            }
+
+            @media screen and (max-width: 768px) {
+                .bar_ul {
+                    padding: 0.5rem;
+                }
+                .bar_ul li a {
+                    font-size: 0.95rem;
+                    padding: 0.5rem;
+                }
+            }
+            @media screen and (max-width: 562px) {
+                .header::before{
+                    background-color: transparent;
+                }
+                .icons {
+                    display: block;
+                    background-color: white;
+                }
+                .icons #close-icon {
+                    display: none;
+                }
+                #check:checked~.icons #close-icon {
+                    display: block;
+                }
+                #check:checked~.icons #menu-icon {
+                    display: none;
+                }
+                .bar_ul {
+                    display: none;
+                }
+                #check:checked~.bar_ul {
+                    display: block;
+                    width: 16rem;
+                    position: absolute;
+                    top: 0.5rem;
+                    right: 4.2em;
+                    background-color: white;
+                    border-top-right-radius: 5px;
+                }
+                .bar_ul li{
+                    margin: 1rem;
+                }
+                
+            }
+        </style>
+
+    </head>
+    <body>
+        <header class="header">
+                <input type="checkbox" name="" id="check">
+                <label for="check" class="icons">
+                    <i class='bx bx-menu' id="menu-icon"></i>
+                    <i class='bx bx-x' id="close-icon"></i>
+                </label>
+                <ul class="bar_ul">
+                    <li class="bar_li"><a href="#"><i class='bx bx-home'></i> Home</a></li>
+                    <li class="bar_li"><a href="#"><i class='bx bxs-dashboard' ></i> Dashboard</a></li>
+                    <li class="bar_li"><a href="#"><i class='bx bx-group'></i> Segment</a></li>
+                    <li class="bar_li"><a href="#"><i class='bx bx-user-circle'></i> Account</a></li>
+                    <li class="bar_li"><a href="#"><i class='bx bx-cog'></i> Setting</a></li>
+                </ul>
+            </div>
+        </header>
+    </body>
+</html>
