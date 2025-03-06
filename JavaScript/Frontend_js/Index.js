@@ -173,11 +173,12 @@
     */
 
     // for-of loop : lopping on array and string
-    let str = "New";
-    for(let i of str){
-        console.log(i);
+    {
+        let str = "New";
+        for(let i of str){
+            console.log(i);
+        }
     }
-
     // for-in loop : used for object
     let student = {
         fullName : "Kunal",
@@ -186,3 +187,115 @@
     for(let keys in student){
         console.log(keys, student[keys]);
     }
+
+// String in JS : String is a sequence of characters used to represent text and it is immutable.
+    {
+        // string creation
+        let str = "Hello String";
+        let str1 = '    Hello   String       ';
+        console.log("String Length :",str.length);
+        console.log("Access Individual Character :",str[0], str[1], str[2]);
+        
+        // String Methods/(inbuilt function) : These are built-in functions to manipulate a string
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+        console.log(str1.trim());   // Remove whitespace
+        console.log(str.slice(3, 11));   // Return part of string str.slice(start, end)
+        console.log(str + str1 + "These are string concatation.")
+        console.log(str1.concat(str));   // join str with str1
+        console.log(str.replace(str1, str));
+        // console.log(str.replace("H", "Y"));
+        console.log(str.charAt(0)); 
+
+        // Templates Literals in JS : A way to have embedded expressions in strings
+        let specialString = `This is a Template Literals`;
+        console.log("Special String :",specialString);
+        
+        // Important....
+        let obj = {
+            item: "pen",
+            price: 10,
+        };
+        // String Interpolation : To create strings by doing substitution of placeholders.(${expression})
+        let output = `The cost of ${obj.item} \n${obj.price} rupees.`;
+        // console.log("The cost of", obj.item, "is",obj.price,"rupees.");
+        console.log(output);
+
+    }
+
+// Arrays : Collection of items (it is a typeof object) and it is mutable
+    {
+        // create array
+        let heroes = ["Iron Man", "Saktiman", "Thor", "Hulk"];
+        console.log(heroes)
+        console.log("Length:",heroes.length)  //properties
+        heroes[0] = "Loki";
+        console.log(heroes);
+
+        // Looping array
+        console.log("Element name print by for loop: ");
+        for(let i = 0; i < heroes.length; i++) {
+            console.log(heroes[i]);
+        }
+        console.log("For-of Looping:");
+        // for-of looping
+        for(let hero of heroes) {
+            console.log(hero);
+        }
+
+        // Array Methods
+        // 1.Push() : add to end
+        let veggies = ["potato", "soya", "tomato", "carrot"];
+        veggies.push("Amla", "Other Veggies");
+        console.log(veggies);
+
+        // 2. pop() : delete from end and return
+        veggies.pop();
+        console.log(veggies);
+        
+        // 3. toString() : convert array to string
+        console.log(veggies.toString());
+        
+        // 4. Concat(): Joins multiple arrays and return result
+        let marvelHeroes = ["Thor", "Sipderman", "Ironman"];
+        let dcHeroes = ["Superman", "Batman"];
+        console.log(marvelHeroes.concat(dcHeroes));
+        
+        // 5. shift() : delete from start and return 
+        marvelHeroes.shift();
+        console.log(marvelHeroes);
+        
+        // 6. unshift() : add to start 
+        marvelHeroes.unshift("antman");
+        console.log(marvelHeroes);
+
+        // slice(startidx, endidx): return a peice of the array
+        console.log(marvelHeroes.slice(1));
+
+        // splice(startidx, delCount, neEl1...) : change original array (add, remove, replace)
+        marvelHeroes.splice(1, 0, "Add one");
+        console.log(marvelHeroes);
+    }
+
+// Functions : Block of code that performs a specific task, can be invoked whenever needed.
+    {
+        // function definition
+        function funtionName(){
+            // Do some work
+        }
+        function functionName(/*param1, param2, ....*/) {
+            // do some work
+        }
+        // function call
+        functionName();
+        functionName(/*argument*/);
+
+        // Example:
+        function myFunction(msg) {
+            console.log(msg);
+        }
+        myFunction("I love JS");
+
+    }
+
+
