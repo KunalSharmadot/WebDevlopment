@@ -297,5 +297,17 @@
         myFunction("I love JS");
 
     }
-
+// Array Function: Compact way of writing function
+    {
+        /*  // Modern JS
+            const functioName = (param1, param2, ....) => {
+                // do some work
+            }
+        */
+       const arrowMul = (a, b) => {
+        console.log(a * b);
+       };
+       console.log(arrowMul);
+       console.log(arrowMul(3, 5));
+    }
 
