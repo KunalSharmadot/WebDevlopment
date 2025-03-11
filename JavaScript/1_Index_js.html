@@ -1,11 +1,22 @@
-// Javascript is dynamically Typed language : No need to define datatype
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main for js</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Javascript is dynamically Typed language : No need to define datatype
 // Shortcut Keys
 /* 
     clrt + L = clear console
 
 */
 // Basic Knowledge
-    console.log("Some Text");   //Used for output
+console.log("Some Text");   //Used for output
     // alert("Alert Message");     //browser give alert message to user
 
 // variable in js : Variables are containers for data
@@ -310,4 +321,58 @@
        console.log(arrowMul);
        console.log(arrowMul(3, 5));
     }
+    // forEach Loop in arrays
+    // Higher Order Function/Methods : Those function or methods which can pass function as a parameter or return as a value.
+    {
+        // arr.forEach(callBackFunction)
+        // callBackFunction : Here, it is function to execute for each element in the array.
+        // A callBack is a Function passed as an argument to another function.
+        let arr = [1, 2, 3, 5, 4];
+        arr.forEach(function printVal(val) {
+            console.log(val);
+        });
+        let arr1 = ["Pune", "Delhi", "Mumbai"];
+        arr1.forEach((val, idx, arr) => {
+            console.log(val.toUpperCase(), idx, arr);
+        });
+    }
+    // Some more array Methods:
+    // 1. Map : It is Simipler to forEach but it will create new array after array changes.
+    // arr.map(callBackFnx(value, idex, array))
+    {
+        let arr = [21, 35, 45];
+        let newArr = arr.map((val) => {
+            // console.log(val);
+            return val**2;
+        })
+        console.log(newArr);
+        console.log(arr);
+    }
+    // 2. Filter :  Create a new array of elements that give true for a condition/filter.
+    // Ex: All even number.
+    {
+        let arr = [2, 4, 5, 6, 8, 7, 9, 0];
+        let newArray = arr.filter((val) => {
+            return val % 2 == 0;
+        })
+        console.log(newArray);
+    }
+    // 3. Reduce : Performs some operations and reduces the array to a single value. It returns that single value.
+    {
+        const array1 = [1, 2, 3, 4];
+        // 0+1+2+3+4
+        const initialValue = 0;
+        // const sumWithInitial = array1.reduce((res, curr) => res + curr, initialValue);
+        // res = 1, curr = 2
+        const sumWithInitial = array1.reduce((res, curr) => {
+            return res + curr;
+            // return and store in res again.
+        });
+        console.log(sumWithInitial);
+    }
 
+// Window Object : The window object represents an open window in a browser. It is browser's object (not JavaScript's) & is automatically created by browser.
+// It is a global object with lots of properties and methods.
+window.console.log("Window Object.");
+</script>
+</html>
