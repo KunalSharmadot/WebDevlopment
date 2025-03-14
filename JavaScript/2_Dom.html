@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="X-UA-Compatible" content="IE-Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM(Document Object Model)</title>
+        <style>
+            *{
+                margin: 0%;
+                padding: 0%;
+                box-sizing: border-box;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1 class="heading-class">DOM Demo by Kunal Sharma</h1>
+        <h4 id="heading" class="heading-class">Topic1 : Start Code</h4>
+        <h4 id="heading1" class="heading-class">Topic2 : Stop Code</h4>
+        <p>Let's learn about DOM concept in details.</p>
+        <button>Click Me</button>
+        <script>
+            // DOM : When a web page is loaded, the browser creates a Document Object Model (DOM) of page.
+            /*
+                window => Document => html => body => div => img
+                                           ||      ||     => h1
+                                           ||      ||     => p
+                                           ||      ||     => div
+                                           ||      => script
+                                           => head => meta
+                                                   => meta
+                                                   => title
+                                                   => link
+            */
+            console.dir(document.body);
+            console.log(document.body);
+            console.log(document.head);
+            console.log(document.body.childNodes[1]);
+            // document.body.childNodes[1].innerText = "abcd";
+
+        // DOM Manipulation
+            // 1. Selection/Access HTML Element with ID
+            let heading = document.getElementById("heading");
+            console.dir(heading);
+            console.log(heading);
+            
+            // 1. Selection/Access HTML Element with ClassName
+            let h1_heading = document.getElementsByClassName("heading-class");
+            console.log(h1_heading);
+
+            // 1. Selection/Access HTML Element by Tag
+            let tag = document.getElementsByTagName("p");
+            console.log(tag);
+
+            // 1. Selection/Access HTML Element with ID/Class/Tag by query selector
+            let firstElementReturn = document.querySelector("h4");
+            console.dir(firstElementReturn);
+            let allElementReturn = document.querySelectorAll("h4");
+            console.dir(allElementReturn);
+        </script>
+    </body>
+</html>
