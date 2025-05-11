@@ -19,7 +19,8 @@
         <h4 id="heading" class="heading-class">Topic1 : Start Code</h4>
         <h4 id="heading1" class="heading-class">Topic2 : Stop Code</h4>
         <p>Let's learn about DOM concept in details.</p>
-        <button>Click Me</button>
+        <p>2nd Paragraph</p>
+        <button id="myID">Click Me</button>
         <script>
             // DOM : When a web page is loaded, the browser creates a Document Object Model (DOM) of page.
             /*
@@ -53,11 +54,22 @@
             let tag = document.getElementsByTagName("p");
             console.log(tag);
 
-            // 1. Selection/Access HTML Element with ID/Class/Tag by query selector
+            // 1. Selection/Access HTML Element with ID(#add_id)/Class(.add_class)/Tag by query selector
             let firstElementReturn = document.querySelector("h4");
             console.dir(firstElementReturn);
             let allElementReturn = document.querySelectorAll("h4");
             console.dir(allElementReturn);
+
+            // Properties
+            // tagName : return tag for element nodes.
+            let tagIdentical = document.querySelector("#myID");
+            console.log(tagIdentical.tagName)
+            // innerText : return the text content of the element and all its children.
+            
+            // innerHTML : return the plain text or HTML contents in the elements.
+            // textContent : return textual content even for hidden elements.
+
+
         </script>
     </body>
 </html>
