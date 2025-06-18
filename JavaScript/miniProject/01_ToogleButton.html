@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+    <style>
+        .Dark {
+            background-color: black;
+            color: white;
+        }
+        .Light {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="mode">Change Mode</button>
+
+    <script>
+        let modebtn = document.querySelector("#mode");
+        let body = document.querySelector("body");
+        let currMode = "Light";
+        modebtn.addEventListener("click", () => {
+            if (currMode === "Light") {
+                currMode = "Dark";
+                // document.querySelector("body").style.backgroundColor = "black";
+                // OR
+                body.classList.add("Dark");
+                body.classList.remove("Light");
+            } else {
+                currMode = "Light";
+                // document.querySelector("body").style.backgroundColor = "white";
+                // OR
+                body.classList.add("Light");
+                body.classList.remove("Dark");
+            }
+        })
+    </script>
+</body>
+
+</html>

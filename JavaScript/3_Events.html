@@ -1,0 +1,75 @@
+<!-- Events in JS : The change in the state of an object is known as an Event.
+ Events are fired to notify code "interesting changes" that may effect code execution. -->
+<!-- 
+    => Mouse Events (click, double click, etc.)
+    => Keyboard Events (keypass, Keyup, keydown)
+    => Form Events (submit etc.)
+    => Print event & many more
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Events in JS</title>
+        <style>
+            #div1 {
+                margin-top: 10px;
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                background-color: blue;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- inline Event Handling -->
+        <button onclick="console.log('button on click');alert('Be alert!')">Click Me!</button>
+        <button ondblclick="console.log('button clicked by 2 time')">Click Me! 2 times</button>
+        <div onmouseover="console.log('You are inside div. ')" id="div1">this is a box</div>
+        
+        <br>
+        <!-- Event Handling internal or External Javascript file -->
+        <button id="btn1">btn1</button>
+        <button id="btn2">Button 02</button>
+
+        <script>
+            // Basic Syntax :
+            //  node.event = () => {
+            //          handle here
+            //  }
+            let btn1 = document.querySelector("#btn1");
+            btn1.onclick = () => {
+                console.log("btn1 was clicked.");
+                let a = 25;
+                a++;
+                console.log(a);
+            }
+            // Event Object : It is a special that has details about the event.
+            // All event handlers have access to the event Object's properties and methods.
+            let btn2 = document.querySelector("#btn2");
+            btn2.onclick = (evt) => {
+                console.log(evt);
+                console.log(evt.type);
+                console.log(evt.target);
+                console.log(evt.clientX, evt.clientY);
+            }
+
+            // Event Listeners
+            // node.addEventListener(event, callback)
+            btn1.addEventListener("click", () => {
+                console.log("button was clicked by addEventListener.");
+            });
+            // Stored in variable
+            const eventListener2 = () => {
+                console.log("button was clicked by addEventListener2.");
+            };
+            btn1.addEventListener("click", (eventListener2));
+            // node.removeEventListener(event, callback)
+            // *Note : the callback reference should be same to remove
+            btn1.removeEventListener("click", eventListener2);
+        </script>
+    </body>
+</html>

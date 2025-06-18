@@ -8,19 +8,44 @@
         <style>
             *{
                 margin: 0%;
-                padding: 0%;
+                /* padding: 0%; */
                 box-sizing: border-box;
             }
-
+            #box {
+                width: 100px;
+                height: 200px;
+                background-color: dodgerblue;
+                color: white;
+                border: 1px solid black;
+            }
         </style>
     </head>
     <body>
         <h1 class="heading-class">DOM Demo by Kunal Sharma</h1>
         <h4 id="heading" class="heading-class">Topic1 : Start Code</h4>
         <h4 id="heading1" class="heading-class">Topic2 : Stop Code</h4>
-        <p>Let's learn about DOM concept in details.</p>
-        <p>2nd Paragraph</p>
+        <p id="para01">Let's learn about DOM concept in details.</p>
+        <p id="para02">2nd Paragraph</p>
         <button id="myID">Click Me</button>
+        <div>
+            <h3 style="visibility: hidden;">Fruits</h3>
+            <ul>
+                <li class="child">Mango</li>
+                <li>Orange</li>
+                <li>Litchi</li>
+            </ul>
+        </div>
+        <p>Hello Everyone's</p>
+        <div id="box" class="JSDiv">This is Div
+            <ul>
+                List
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+            </ul>
+            <!-- Append the button by javascript -->
+        </div>
+
         <script>
             // DOM : When a web page is loaded, the browser creates a Document Object Model (DOM) of page.
             /*
@@ -64,12 +89,60 @@
             // tagName : return tag for element nodes.
             let tagIdentical = document.querySelector("#myID");
             console.log(tagIdentical.tagName)
-            // innerText : return the text content of the element and all its children.
             
+            // innerText : return the text content of the element and all its children.
+            let div = document.querySelector("div").innerText;
+            console.dir(div);
+            // OnConsole: div.innerText = "ChangAllText";
+
             // innerHTML : return the plain text or HTML contents in the elements.
+            let div1 = document.querySelector("div").innerHTML;
+            console.dir(div1.innerHTML);
+            // OnConsole: div1.innerHTML = "<div>ChangeWithTag</div>";
+
             // textContent : return textual content even for hidden elements.
+            let showSpyContent = document.querySelector("h3").textContent;
+            console.dir(showSpyContent);
+            
+            // getAttribute(attr) :- to get attribute value.
+            let di = document.querySelector("#box");
+            console.log(di);
+            let val = di.getAttribute("id");
+            console.log(val)
+            console.log(di.getAttribute("class"));
+            
+            // setAttribute(attr, value) :- to set the attribute value 
+            console.log(di.setAttribute("class", "newClass"));
+            let para01 = document.querySelector("#para01");
+            console.log(para01.classList.add("inPara"));
+            // console.log(para01.classList.remove("inPara"));
+            console.log(para01.classList);
 
+            // node.style => Change the styling properties.
+            let sp = document.querySelector("#box");
+            sp.style.backgroundColor = "purple";
+            sp.style.fontSize = "20px";
+            sp.innerText = "Hello!";
 
-        </script>
+            // Inset Elements
+            let newBtn = document.createElement("button");
+            newBtn.innerHTML = "<i>click me!</i>";
+            console.log(newBtn);
+            let el = document.querySelector("#box");
+            // node.append(el) => add at the end of node (inside)
+            el.append(newBtn);
+            // node.prepend(el) => add at the start of node (inside)
+            el.prepend(newBtn);
+            // node.before(el) => add before the node (outside)
+            el.before(newBtn);
+            // node.after(el) => add after the node (outside)
+            el.after(newBtn);
+
+            // Delete Elements
+            let para02 = document.querySelector("#para02");
+            para02.remove();
+            // Also Explore removeChild and appendChild.
+
+            </script>
     </body>
 </html>
