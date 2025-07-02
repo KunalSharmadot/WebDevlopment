@@ -23,3 +23,8 @@ function greet() {
 setTimeout(greet, 3*1000);
 // setInterval(function_call, printAfterComplitingInterval_Repeated)
 setInterval(greet, 1*1000);
+
+// math.floor() => niglect after decimal number
+    // math.random() => generate 0 to 1 number
+    // math.random() * 3 => generate 0 to 2 number
+    Math.floor(Math.random() * 3);

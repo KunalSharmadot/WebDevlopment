@@ -1,0 +1,113 @@
+<!-- Prototype in JS : A javascript object is an entity having state and behavior (Properties and method).
+    JS Objects have a special property called prototype.
+    We can set prototype using _ _proto_ _    
+    *If object and prototype have same method, Object's method will be used.
+-->
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Classes & Objects</title>
+    </head>
+    <body>
+        
+        <script>
+            const student = {
+                fullName : "Kunal Sharma",
+                marks : 94.4,
+                printMarks : function () {
+                    console.log("Marks : ", this.marks);
+                },
+            };
+            const employee = {
+                calctax() {
+                    console.log("tax rate is 10%");
+                },
+            };
+            const karanArjun = {
+                salary: 50000,
+                calctax() {
+                    console.log("tax rate is 20%");
+                },
+            };
+            const karanArjun1 = {
+                salary: 50000,
+            };
+            karanArjun.__proto__ = employee;
+            karanArjun1.__proto__ = employee;
+
+            /* Classes in JS : Class is a program-code template for creating objects.
+            Those Objects will have some state (variable) & some behaviour (function) inside it.
+            class MyClass{
+                constructor(){.....}
+                MyMethod(){.....}
+            }
+            let myObj = new MyClass();    
+            */
+            class toyotaCar {
+                // Constructor() metjod is : automatically invoked by new
+                //                          : initializes object
+                constructor(brand) {
+                    console.log("Creating new Object.");
+                    this.brand = brand;
+                }
+                start() {
+                    console.log("Start");
+                }
+                stop() {
+                    console.log("Stop");
+                }
+                /*
+                setBrand(brand) {
+                    this.brand = brand;
+                }*/
+            }
+            let fortuner = new toyotaCar("fortuner");
+            // fortuner.setBrand("Fortuner");
+            
+            /* 
+            Inheritance in JS : Inheritance is passing down properties & methods from parent class to child class.
+            *If child & Parent have same method, child's method will be used.[Method Overriding].
+            */
+            class parent {
+                hello() {
+                    console.log("Say Hello..");
+                }
+            }
+            class child extends parent {}
+            
+            let InheritObj = new child();
+            console.log(InheritObj.hello());
+
+            /*
+            super keyword : The super keyword is used to call the constructor of its parent class to access the parent's properties and methods.
+            super(args) // calls parent's Constructor
+            super.parentMethod(args)
+            */
+            class person {
+                constructor() {
+                    this.species = "homo sapiens";
+                }
+                eat() {
+                    console.log("eat.");
+                }
+            }
+            class engineer extends person {
+                constructor(branch) {
+                    super();    //to invoke parent class constructor
+                    this.branch = branch;
+                }
+                work() {
+                    super.eat();
+                    console.log("Solve Problems, build something");
+                }
+            }
+            let engObj = new engineer("Chemical Engg");
+            console.log(engObj);
+            // console.log(engObj.branch);
+
+
+        </script>
+    </body>
+</html>

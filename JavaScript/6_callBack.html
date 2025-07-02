@@ -1,0 +1,97 @@
+<!-- Sync in JS :-
+    Synchronous : Synchronous means the code runs in a particular sequence of instructions given in the program.
+    Each instruction waits for the previous instruction to complete its execution.
+
+    Asynchronous : Due to synchronous programming, sometims imp instructions get blocked due to some previous instructions, which causes a delay in the UI.
+    Asynchronous code execution allows to execute next instructions immediately and doesn't block the flow.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsyncAwait</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        function hello() {
+            console.log("Hello");
+        }
+        setTimeout(hello, 2000);
+                                        OR
+        setTimeout(() => {
+            console.log("Hello");
+        }, 4000);
+        */
+
+        //Asynchronous program
+        console.log("Hello");
+        console.log("Kunal");
+        // Below funtion take few second to output
+        setTimeout(() => {
+            console.log("Sharma");
+        }, 2000);
+        // Below output execute before above function output
+        console.log("Hye");
+        console.log("Kunal");
+
+        // Callbacks :  A callback is a function passed as an argument to another function.
+
+        function calculator(a, b, sumCallback) {
+            sumCallback(a, b);
+        }
+        calculator(1, 2, (a, b) => {
+            console.log(a + b);
+        });
+
+        // Callback Hell : Nested callback stacked below one another forming a pyramid structure.(Pyramid of Doom)
+        function getData(dataID, getNextData) {
+            setTimeout(() => {
+                console.log("Data : ", dataID);
+                if (getNextData) {
+                    getNextData();
+                }
+            }, 2000);
+        }
+        // Callback Hell
+        getData(1, () => {
+            getData(2, () => {
+                getData(3, () => {
+                    getData(4);
+                });
+            });
+        });
+
+        //Promise replace Callback Hell
+        // Example
+        function data1(dataID) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("Data : ", dataID);
+                    resolve("Success");
+                }, 10000);
+            });
+        };
+
+        // let p1 = data1(1);
+        // data1(1).then((res) => {
+        //     console.log(res);
+        //     data1(2).then((res) => {
+        //         console.log(res);
+        //     });
+        // });
+        // best method
+        data1(1).then(() => {
+            return data1(2);
+        })
+        .then((res) => {
+            console.log(res);
+        });
+    </script>
+</body>
+
+</html>

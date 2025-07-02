@@ -1,5 +1,5 @@
+let i = 30;
 function counter() {
-    let i = 30;
     console.log(i);
     i--;
 }
