@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+
+<body>
+
+    <script>
+        // Async Await : async function always return.
+        // await pauses the execution of its surrounding async function until the promise is settled.
+        function getData(dataID) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("Data : ", dataID);
+                    resolve("Success");
+                }, 3000);
+            })
+        }
+        // Async Await
+        async function getAllData() {
+            await getData(3);
+            await getData(5);
+            await getData(7);
+        }
+        getAllData();
+
+        // IIFE : Immediately Invoked Function Expression.
+        /*
+        (function () {
+            //..
+        })();
+        (() => {
+            //...
+        })();
+        (async () => {
+            //...
+        })();
+        */
+    </script>
+</body>
+
+</html>

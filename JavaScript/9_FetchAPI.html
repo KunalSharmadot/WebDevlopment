@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+
+<body>
+
+    <script>
+        // API : Application Programming Interface
+        // FetchAPI : It provide interface for fetching(sending/receiving) resources.
+        // It uses Request and Response object.
+        // let promise = fetch(url, [options])
+        const URL = "https://dog.ceo/api/breeds/image/random";
+        const getImg = async () => {
+            let promise = await fetch(URL);
+            console.log(promise);
+            // AJAX is Asynchronous JS & XML
+            // JSON is JavaScript Object Notation
+            // json() method : return a second promise that resolve with the result of parsing the response body text as JSON.(Input is JSON, Output is JSON)
+            let data = await promise.json();
+            console.log(data);
+        }
+        getImg();
+
+        // By promise chain method
+        function getI() {
+            fetch(URL)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                });
+        }
+        getI();
+
+        // Request & Response : 
+        // HTTP Verbs
+    </script>
+</body>
+
+</html>
