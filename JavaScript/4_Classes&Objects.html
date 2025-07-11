@@ -5,109 +5,148 @@
 -->
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Classes & Objects</title>
-    </head>
-    <body>
-        
-        <script>
-            const student = {
-                fullName : "Kunal Sharma",
-                marks : 94.4,
-                printMarks : function () {
-                    console.log("Marks : ", this.marks);
-                },
-            };
-            const employee = {
-                calctax() {
-                    console.log("tax rate is 10%");
-                },
-            };
-            const karanArjun = {
-                salary: 50000,
-                calctax() {
-                    console.log("tax rate is 20%");
-                },
-            };
-            const karanArjun1 = {
-                salary: 50000,
-            };
-            karanArjun.__proto__ = employee;
-            karanArjun1.__proto__ = employee;
 
-            /* Classes in JS : Class is a program-code template for creating objects.
-            Those Objects will have some state (variable) & some behaviour (function) inside it.
-            class MyClass{
-                constructor(){.....}
-                MyMethod(){.....}
-            }
-            let myObj = new MyClass();    
-            */
-            class toyotaCar {
-                // Constructor() metjod is : automatically invoked by new
-                //                          : initializes object
-                constructor(brand) {
-                    console.log("Creating new Object.");
-                    this.brand = brand;
-                }
-                start() {
-                    console.log("Start");
-                }
-                stop() {
-                    console.log("Stop");
-                }
-                /*
-                setBrand(brand) {
-                    this.brand = brand;
-                }*/
-            }
-            let fortuner = new toyotaCar("fortuner");
-            // fortuner.setBrand("Fortuner");
-            
-            /* 
-            Inheritance in JS : Inheritance is passing down properties & methods from parent class to child class.
-            *If child & Parent have same method, child's method will be used.[Method Overriding].
-            */
-            class parent {
-                hello() {
-                    console.log("Say Hello..");
-                }
-            }
-            class child extends parent {}
-            
-            let InheritObj = new child();
-            console.log(InheritObj.hello());
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes & Objects</title>
+</head>
 
+<body>
+
+    <script>
+        const dog = {
+            name: "Doggesh",
+            legCount: 3,
+            speak: "bhow bhow"
+        }
+        // animal X bhow bhow with 2 legs
+        console.log("Animal " + dog["name"] + " " + dog["speak"] + " with " + dog["legCount"] + " legs.");
+        // Below mathod is better than above method.
+        const cat = {
+            name: "Billa",
+            legCount: 4,
+            speak: "meow"
+        }
+        function printStr(animal) {
+            console.log("Animal " + animal["name"] + " " + animal["speak"] + " with " + animal["legCount"] + " legs.");
+        }
+        printStr(dog);
+        printStr(cat);
+        // suggested way 
+        class Animal {
+            constructor (name, legCount, speak) {
+                this.name = name;
+                this.legCount = legCount;
+                this.speak = speak;
+            }
+            // static function call by call name directly.
+            static myType() {
+                console.log("animal");
+            }
+            // this function only called by object of class
+            speak() {
+                console.log("Hi there " + this.speaks)
+            }
+        }
+        Animal.myType();
+
+        const student = {
+            fullName: "Kunal Sharma",
+            marks: 94.4,
+            printMarks: function () {
+                console.log("Marks : ", this.marks);
+            },
+        };
+        const employee = {
+            calctax() {
+                console.log("tax rate is 10%");
+            },
+        };
+        const karanArjun = {
+            salary: 50000,
+            calctax() {
+                console.log("tax rate is 20%");
+            },
+        };
+        const karanArjun1 = {
+            salary: 50000,
+        };
+        karanArjun.__proto__ = employee;
+        karanArjun1.__proto__ = employee;
+
+        /* Classes in JS : Class is a program-code template for creating objects.
+        Those Objects will have some state (variable) & some behaviour (function) inside it.
+        class MyClass{
+            constructor(){.....}
+            MyMethod(){.....}
+        }
+        let myObj = new MyClass();    
+        */
+        class toyotaCar {
+            // Constructor() metjod is : automatically invoked by new
+            //                          : initializes object
+            constructor(brand) {
+                console.log("Creating new Object.");
+                this.brand = brand;
+            }
+            start() {
+                console.log("Start");
+            }
+            stop() {
+                console.log("Stop");
+            }
             /*
-            super keyword : The super keyword is used to call the constructor of its parent class to access the parent's properties and methods.
-            super(args) // calls parent's Constructor
-            super.parentMethod(args)
-            */
-            class person {
-                constructor() {
-                    this.species = "homo sapiens";
-                }
-                eat() {
-                    console.log("eat.");
-                }
+            setBrand(brand) {
+                this.brand = brand;
+            }*/
+        }
+        let fortuner = new toyotaCar("fortuner");
+        // fortuner.setBrand("Fortuner");
+
+        /* 
+        Inheritance in JS : Inheritance is passing down properties & methods from parent class to child class.
+        *If child & Parent have same method, child's method will be used.[Method Overriding].
+        */
+        class parent {
+            hello() {
+                console.log("Say Hello..");
             }
-            class engineer extends person {
-                constructor(branch) {
-                    super();    //to invoke parent class constructor
-                    this.branch = branch;
-                }
-                work() {
-                    super.eat();
-                    console.log("Solve Problems, build something");
-                }
+        }
+        class child extends parent { }
+
+        let InheritObj = new child();
+        console.log(InheritObj.hello());
+
+        /*
+        super keyword : The super keyword is used to call the constructor of its parent class to access the parent's properties and methods.
+        super(args) // calls parent's Constructor
+        super.parentMethod(args)
+        */
+        class person {
+            constructor() {
+                this.species = "homo sapiens";
             }
-            let engObj = new engineer("Chemical Engg");
-            console.log(engObj);
-            // console.log(engObj.branch);
+            eat() {
+                console.log("eat.");
+            }
+        }
+        class engineer extends person {
+            constructor(branch) {
+                super();    //to invoke parent class constructor
+                this.branch = branch;
+            }
+            work() {
+                super.eat();
+                console.log("Solve Problems, build something");
+            }
+        }
+        let engObj = new engineer("Chemical Engg");
+        console.log(engObj);
+        // console.log(engObj.branch);
 
 
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>
