@@ -10,7 +10,8 @@ state VARCHAR(100),
 pincode VARCHAR(10),
  -- connect and pick data from (users) table (id) row and (on delete cascade) when deletion perform on users table than it effect on addresses table
 CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE	
--- CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL	-- because of set null the foreign key null	
+-- ON DELETE SET NULL	-- set the foreign key to NULL in the child table
+-- ON DELETE RESTRICT 	-- Prevents deletion of parent if child exists (default)
 );
 SELECT * FROM addresses;
 
@@ -40,7 +41,7 @@ VALUES
 -- To drop a foreign key, you need to know its constraint name. MySQL auto-generates it if you don’t specify one, or you can name it yourself
 ALTER TABLE addresses ADD CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE;
 ALTER TABLE addresses DROP FOREIGN KEY fk_user;
--- Delete the user 22 id that effect directly to addresses table by foreign key
+-- Delete the user 22 id that directly effect to addresses table by foreign key
 DELETE FROM users WHERE id = 22;
 SELECT * FROM addresses;
 DROP TABLE addresses;
